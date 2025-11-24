@@ -16,6 +16,16 @@ There are _no_ tests implemented in the `*_test.ts` files yet, because they'd be
 
 Your task is to clean up the mess, and then to write tests for the improved code.
 
+## Refactoring Notes (Prime Factors)
+
+The `prime_factors.ts` module was refactored to separate concerns:
+
+* Pure computation (`factorize` for a single number, `factorizeAll` for arrays)
+* Side-effectful printing wrapper (`factor`) retained for backwards compatibility
+* Performance improved using a Sieve of Eratosthenes with caching of generated primes
+
+This allows straightforward unit testing without capturing console output.
+
 Run all the tests:
 
     deno test
